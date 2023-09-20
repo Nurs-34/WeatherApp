@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/route"
+    app:startDestination="@id/cityListFragment">
+
+    <fragment
+        android:id="@+id/cityListFragment"
+        android:name="kz.techtask.weatherapp.ui.CityListFragment"
+        android:label="fragment_city_list"
+        tools:layout="@layout/fragment_city_list" >
+        <action
+            android:id="@+id/navigate_to_city_weather_detail"
+            app:destination="@id/cityDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cityDetailFragment"
+        android:name="kz.techtask.weatherapp.ui.CityDetailFragment"
+        android:label="fragment_city_detail"
+        tools:layout="@layout/fragment_city_detail" >
+        <action
+            android:id="@+id/navigate_to_city_list"
+            app:destination="@id/cityListFragment" />
+        <argument
+            android:name="city"
+            app:argType="string"
+            android:defaultValue="None" />
+        <argument
+            android:name="date"
+            app:argType="string"
+            android:defaultValue="None" />
+    </fragment>
+</navigation>
