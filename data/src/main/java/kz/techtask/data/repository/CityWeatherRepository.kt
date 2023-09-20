@@ -1,7 +1,7 @@
-package kz.techtask.weatherapp.repository
+package kz.techtask.data.repository
 
-import kz.techtask.weatherapp.model.CityWeather
-import kz.techtask.weatherapp.network.RestApiInterface
+import kz.techtask.data.model.CityWeather
+import kz.techtask.data.network.RestApiInterface
 import retrofit2.Response
 
 object CityWeatherRepository {
@@ -16,7 +16,10 @@ object CityWeatherRepository {
         return apiService.getForecastWeather(city, days = 3)
     }
 
-    suspend fun getHistoryWeather(city: String, date: String): Response<CityWeather> {
+    suspend fun getHistoryWeather(
+        city: String,
+        date: String
+    ): Response<CityWeather> {
         return apiService.getHistoryWeather(city, date)
     }
 }

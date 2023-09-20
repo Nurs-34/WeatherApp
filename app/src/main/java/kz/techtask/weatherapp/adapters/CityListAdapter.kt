@@ -7,8 +7,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import kz.techtask.data.model.CityWeather
 import kz.techtask.weatherapp.databinding.CityItemBinding
-import kz.techtask.weatherapp.model.CityWeather
 
 class CityListAdapter(
     private var values: List<CityWeather>,

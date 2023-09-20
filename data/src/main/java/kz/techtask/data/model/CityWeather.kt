@@ -1,4 +1,4 @@
-package kz.techtask.weatherapp.model
+package kz.techtask.data.model
 
 data class CityWeather(
     val current: Current,

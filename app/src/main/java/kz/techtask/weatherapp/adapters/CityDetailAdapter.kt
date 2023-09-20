@@ -8,11 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import kz.techtask.weatherapp.databinding.CityDetailItemBinding
-
-import kz.techtask.weatherapp.databinding.FragmentCityDetailBinding
-import kz.techtask.weatherapp.model.CityWeather
-import kz.techtask.weatherapp.model.Day
-import kz.techtask.weatherapp.model.Forecastday
+import kz.techtask.data.model.Forecastday
 
 class CityDetailAdapter(
     private var values: List<Forecastday>

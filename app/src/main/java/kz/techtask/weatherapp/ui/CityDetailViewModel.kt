@@ -4,10 +4,10 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
-import kz.techtask.weatherapp.model.CityWeather
-import kz.techtask.weatherapp.model.Day
-import kz.techtask.weatherapp.model.Forecastday
-import kz.techtask.weatherapp.repository.CityWeatherRepository
+import kz.techtask.data.model.CityWeather
+import kz.techtask.data.model.Day
+import kz.techtask.data.model.Forecastday
+import kz.techtask.data.repository.CityWeatherRepository
 
 class CityDetailViewModel(private val repository: CityWeatherRepository) : ViewModel() {
     val cityWeatherActionFlow: MutableSharedFlow<CityListViewModel.CityWeatherAction> = MutableSharedFlow()

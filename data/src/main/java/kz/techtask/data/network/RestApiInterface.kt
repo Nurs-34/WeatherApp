@@ -1,6 +1,6 @@
-package kz.techtask.weatherapp.network
+package kz.techtask.data.network
 
-import kz.techtask.weatherapp.model.CityWeather
+import kz.techtask.data.model.CityWeather
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Response

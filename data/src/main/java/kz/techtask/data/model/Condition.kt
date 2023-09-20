@@ -1,7 +1,6 @@
-package kz.techtask.weatherapp.model
+package kz.techtask.data.model
 
 data class Condition(
-//    val code: Int,
     val icon: String,
     val text: String
 )
