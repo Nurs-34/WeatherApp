@@ -12,8 +12,9 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import kz.techtask.weatherapp.R
-import kz.techtask.weatherapp.adapters.CityDetailAdapter
+import kz.techtask.weatherapp.ui.adapters.CityDetailAdapter
 import kz.techtask.weatherapp.databinding.FragmentCityDetailBinding
+import kz.techtask.weatherapp.ui.CityDetailViewModel.CityWeatherAction.ShowNetworkErrorToast
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CityDetailFragment : Fragment() {
@@ -40,7 +41,6 @@ class CityDetailFragment : Fragment() {
 
         val lifecycleScope = viewLifecycleOwner.lifecycleScope
         val city = args.city
-        val time = args.date
         binding.tvCity.text = city
 
         adapter = CityDetailAdapter(emptyList())
@@ -74,7 +74,7 @@ class CityDetailFragment : Fragment() {
 
         viewModel.cityWeatherActionFlow.onEach { action ->
             when (action) {
-                is CityListViewModel.CityWeatherAction.ShowNetworkErrorToast -> Toast.makeText(
+                is ShowNetworkErrorToast -> Toast.makeText(
                     requireContext(),
                     getString(R.string.please_check_your_internet_connection),
                     Toast.LENGTH_LONG

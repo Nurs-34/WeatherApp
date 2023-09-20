@@ -12,7 +12,9 @@
         tools:layout="@layout/fragment_city_list" >
         <action
             android:id="@+id/navigate_to_city_weather_detail"
-            app:destination="@id/cityDetailFragment" />
+            app:destination="@id/cityDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/cityDetailFragment"
@@ -21,7 +23,9 @@
         tools:layout="@layout/fragment_city_detail" >
         <action
             android:id="@+id/navigate_to_city_list"
-            app:destination="@id/cityListFragment" />
+            app:destination="@id/cityListFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
         <argument
             android:name="city"
             app:argType="string"

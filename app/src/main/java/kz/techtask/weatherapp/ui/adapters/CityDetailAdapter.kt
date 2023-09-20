@@ -1,4 +1,4 @@
-package kz.techtask.weatherapp.adapters
+package kz.techtask.weatherapp.ui.adapters
 
 import android.annotation.SuppressLint
 import androidx.recyclerview.widget.RecyclerView

@@ -6,6 +6,7 @@ import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kz.techtask.data.model.CityWeather
 import kz.techtask.data.repository.CityWeatherRepository
+import kz.techtask.weatherapp.ui.CityListViewModel.CityWeatherAction.ShowNetworkErrorToast
 
 class CityListViewModel(private val repository: CityWeatherRepository) : ViewModel() {
     val cityWeatherActionFlow: MutableSharedFlow<CityWeatherAction> = MutableSharedFlow()
@@ -25,7 +26,7 @@ class CityListViewModel(private val repository: CityWeatherRepository) : ViewMod
             _cityListFLow.value = cityWeatherList
         } catch (e: Exception) {
             Log.e("CityListVM", "Exception: $e")
-            cityWeatherActionFlow.emit(CityWeatherAction.ShowNetworkErrorToast)
+            cityWeatherActionFlow.emit(ShowNetworkErrorToast)
         }
     }
 

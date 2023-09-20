@@ -2,24 +2,19 @@ package kz.techtask.weatherapp.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import kz.techtask.weatherapp.R
-import kz.techtask.weatherapp.adapters.CityListAdapter
-import kz.techtask.weatherapp.databinding.FragmentCityDetailBinding
+import kz.techtask.weatherapp.ui.adapters.CityListAdapter
 import kz.techtask.weatherapp.databinding.FragmentCityListBinding
+import kz.techtask.weatherapp.ui.CityListViewModel.CityWeatherAction.ShowNetworkErrorToast
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CityListFragment : Fragment() {
@@ -63,7 +58,7 @@ class CityListFragment : Fragment() {
 
         viewModel.cityWeatherActionFlow.onEach { action ->
             when (action) {
-                is CityListViewModel.CityWeatherAction.ShowNetworkErrorToast -> Toast.makeText(
+                is ShowNetworkErrorToast -> Toast.makeText(
                     requireContext(),
                     getString(R.string.please_check_your_internet_connection),
                     Toast.LENGTH_LONG

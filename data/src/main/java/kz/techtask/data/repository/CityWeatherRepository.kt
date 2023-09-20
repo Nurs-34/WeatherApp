@@ -13,7 +13,7 @@ object CityWeatherRepository {
     }
 
     suspend fun getForecastWeather(city: String): Response<CityWeather> {
-        return apiService.getForecastWeather(city, days = 3)
+        return apiService.getForecastWeather(city, days = 3) //weather api позволяет посмотреть прогноз только на 3 дня
     }
 
     suspend fun getHistoryWeather(
